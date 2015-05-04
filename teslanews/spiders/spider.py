@@ -10,7 +10,6 @@ class MySpider(BaseSpider):
 	start_urls = ["http://www.teslamotors.com/blog"]
 
 	def parse(self, response):
-		hxs = HtmlXPathSelector(response)
 		updates = hxs.xpath('//div[@class="blog-wrapper no-image"]')
 		base = "http://www.teslamotors.com"
 		items = []
